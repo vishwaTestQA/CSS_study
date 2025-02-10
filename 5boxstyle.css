@@ -1,0 +1,36 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.container{
+  border: 2px dashed red;
+  /* width: 50%; */
+ /* font-size:2rem;     matters when we define margin padding as em */
+ font-size:2rem;
+  padding: 0.5rem;     /* all */
+  margin: 1.5em;
+  /* margin:2em 1.5em 10em    top rightLeft bottom */
+  /* margin:2em 1.5em         topBottom rightLeft  */
+
+  /* border: dashed red; by default 3px */
+  /* border: blue; wont work*/
+  /* border-top: 5px; */
+  /* border-top: brown; */   /* wont work */
+  /* border-top-style: 10px; */
+
+  border: solid blue;
+  overflow: auto;
+}
+
+.circle{
+  margin: 3rem auto;
+  background-color: gold;
+  border: 2px solid black;
+  outline: 2px solid red;
+  outline-offset: 0.25rem;
+  border-radius: 50%;  
+  width: 100px;
+  height:100px;
+}
+

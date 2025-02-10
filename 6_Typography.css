@@ -1,0 +1,10 @@
+body {
+  /* margin:0%; */
+  padding: 10%;
+  font-size: 2rem;
+  /* font-family: */
+}
+
+input,button{
+  font-size: inherit;
+}
