@@ -1,0 +1,101 @@
+/* Begin reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  display: block;
+}
+
+/* End Reset */
+
+/* Utility classes */
+
+.nowrap{
+  white-space: nowrap;
+}
+
+.offscreen{   /* it keeps the content away from the screen but readers can read it */
+  position: absolute;   
+  left: -10000px;
+}
+
+/* End utility classes */
+
+body{
+  /* font-size: 1.5rem; */
+  min-height: 100vh; /*to keep the content to full screen even content is small */
+  background-color: aliceblue;
+
+  /* For background designing */
+  /* background-image: url("./img/bubbles.png"), linear-gradient(to left, steelblue, white);
+   background-repeat: repeat-y;
+    background-position: right center;
+  background-size: 10%, auto; */
+}
+
+.initial{
+  border: 2px dotted;
+}
+
+p img{
+  /* width:25%;
+  height:auto; */
+  /* min-width: 100px; */
+}
+
+.outersection{
+  
+  background-color: rgb(251, 210, 156);   /* fallback */
+  /* background-image: url(./img/pat1.png); */
+  /* background-repeat: no-repeat; */
+  /* background-repeat: repeat-x; */
+
+  background-image: url(./img/map-2176x1451.png);
+  background-size: cover;
+}
+
+.hero{
+  border-bottom: 2px solid;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  background-color: hsla(0, 0%, 100%, 0.3);
+
+}
+
+
+.h1cls{
+ 
+  font-size: 500%;
+  color: aliceblue;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.profile-pic-figure{
+  width:35%;
+}
+
+.profile-pic-figure img{
+  min-width: 100px;
+  border: 2px double;
+  width: 100%;
+  height:auto;
+  border: 2px double black;
+  border-radius: 50%;
+}
+
+.clip{
+  font-weight: 800;
+  font-size: 18rem;
+  background-image: url('img/scenic-2200x1331.png');
+  background-size: 100%;
+  -webkit-background-clip: text;
+  color: hsl(0, 0%, 0%, 0.1);
+  background-position: bottom;
+  /* color: transparent; */
+}
