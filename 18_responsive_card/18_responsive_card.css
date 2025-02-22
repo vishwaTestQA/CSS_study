@@ -1,0 +1,206 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font: 1.5rem sans-serif;
+  min-height:100vh;
+  display: flex;
+  background-color: grey;
+  background-image: radial-gradient(whitesmoke, grey);
+  flex-direction: column;
+} 
+
+img{
+  display: block;
+  width: 100%; 
+  height: auto;
+}
+
+:is(.header, .footer){
+  position: sticky;
+  background-color: darkblue;
+  color:whitesmoke;
+  text-align: center;
+}
+
+header{
+  top:0;
+  background-color: red;
+   /* this is to split header title and navbar below as rows */
+  /* place-content: center; */
+  /* grid-template-columns: 1fr; */
+}
+
+.nav{
+  background-color: white;
+  color: whitesmoke;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid #333;
+  }
+
+
+  .footer{
+    bottom: 0;
+  }
+
+.nowrap{
+  white-space: nowrap;
+}
+
+.main-container{
+  /* flex-grow:1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex:1; */
+  padding: 1rem;
+  gap:1.5rem;
+}
+
+/* PROFILE CARD */
+.card{
+  scroll-margin-top: 8rem;
+  width: min(100%, 350px);
+  background-color: grey;
+  border: 2px solid #333;
+  border-radius:15%;
+  gap:1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:target{
+  border: 3px solid red;
+}
+
+ .card figure{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card figure img{
+  border: 2px double black;
+  border-radius: 50%;
+}
+
+
+/* .profilepic{
+  width:45%;
+} */
+
+/* .profilepic img{
+  min-width: 100px;
+  width: 100%;
+  height:auto;
+  border: 2px double black;
+  border-radius: 50%;
+} */
+
+.figCaption{
+  /* position: absolute;
+  left: -10000px; */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+/* 
+@media screen and (min-width: 440px){
+  .nav{
+  background-color: white;
+  color: whitesmoke;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #333;
+  }
+} */
+
+
+/* SMALL */
+@media screen and (min-width: 567px){
+  .main-container{
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+ 
+  .card{
+    width: min(100%, 400px)
+  }
+
+}
+
+/* MEDIUM */
+@media screen and (min-width: 768px){
+  .main-container{
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+ 
+  .card{
+    width: min(100%, 325px)
+  }
+
+  .nav{
+   display:none;
+  }
+
+}
+
+/* LARGE */
+@media screen and (min-width: 992px){
+  .card{
+    width: min(100%, 400px);
+  }
+
+  .card:nth-child(2){
+    order:-1;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .card{
+    width: min(calc(33% - 1rem), 500px); /* dont want to go beyond 500px as the pic orignial size is 500*500  othewise it starts to blur */
+  }
+}
+
+@media screen and (max-height:425px) and (min-aspect-ratio: 7/4) {
+  .nav{
+   display: none;
+  }
+
+  .main-container{
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 0.5rem;
+    gap:0.5rem;
+  }
+
+  .card{
+    width: min(calc(33% - 0.25rem), 200px);
+  }
+
+  .card .figCaption, .card p{
+    font-size: 1.25rem;
+  }
+
+  .footer{
+    position: sticky;
+    bottom:0;
+  }
+  /* body{
+    min-height: 100vh;
+  } */
+}

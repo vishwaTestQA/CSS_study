@@ -1,0 +1,69 @@
+body{
+  font-size: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow:1;
+  flex:1;
+}
+
+div{
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-content: center;
+  border: 2px solid #000;
+}
+
+
+div:first-child{
+  background-color: rgb(78, 78, 225);
+}
+
+div:nth-child(2){
+  background-image: linear-gradient(to left,red,blue);
+}
+
+div:last-child{
+  background-color: green;
+}
+
+
+/* transform: transalte, rotate, scale, skew */
+
+/* div:first-child:hover{
+  background-color: rgb(78, 78, 225);
+  transform: translateX(50%);
+  transform: rotateX(180deg);
+  transition: 3s;
+}
+
+div:nth-child(2):hover{
+  background-color: yellow;
+  transform: translateY(-2rem);
+  transform: rotateY(30deg);
+  transition: 3s;
+}
+
+div:last-child:hover{
+  background-color: green;
+  transform: translate(10px, -2rem);
+   transform: rotate(-45deg);
+   transition: 3s;
+} */
+
+div:hover{
+  background-color: midnightblue;
+  /* transition-property: background-color,transform;
+  transition-duration: 6s , 3s;
+  transition-delay: 0.2s;
+  transition-timing-function: steps(1s, 2s); */
+
+  transition: transform 1s 0.5s, background-color 6s 0.5s;
+}
+
+div:first-child:hover{
+  transform: rotateX(45deg)
+}

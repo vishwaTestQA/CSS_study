@@ -1,0 +1,48 @@
+body{
+  font-size: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow:1;
+  flex:1;
+}
+
+div{
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-content: center;
+  border: 2px solid #000;
+}
+
+
+div:first-child{
+  background-color: rgb(78, 78, 225);
+}
+
+div:nth-child(2){
+  background-image: linear-gradient(to left,red,blue);
+}
+
+div:last-child{
+  background-color: green;
+}
+
+.animate{
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-delay: 0.25s;
+  animation-iteration-count: 5;
+  animation-timing-function: ease;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(600px) rotate(180deg);}
+  66% {transform: translateX(-600px) rotate(-180deg);}
+  100%{transform: translateY(-200px);}
+}
+
+

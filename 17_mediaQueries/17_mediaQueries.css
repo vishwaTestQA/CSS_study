@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font: 1.5rem "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #333;
+  background-image:linear-gradient(orange, white,  green);
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  body{
+    background-color: #333;
+    background-image:linear-gradient(red, yellow, red);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 900px) {
+  body{
+    background-color: #333;
+    background-image: radial-gradient(red, yellow, red);
+  }
+}
+
+header, main, footer{
+  display: grid;
+  grid-template-columns: 100%;
+  display: block;
+  /* place-content: center; */
+  /* align-content: center;
+  
+  justify-items: center; */
+
+  text-align: center;
+}
+
+header, footer{
+  background-color: violet;
+  position: sticky;
+}
+
+header{
+  top: 0;
+}
+
+main{
+  flex-grow:1;
+}
+
+footer{
+  bottom: 0;
+}
+
+nav{
+  padding: 0.5rem;
+  background-color: grey;
+  color:white;
+}
