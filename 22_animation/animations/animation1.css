@@ -23,7 +23,7 @@ div:first-child{
 }
 
 div:nth-child(2){
-  background-image: linear-gradient(to left,red,blue);
+  background-color: yellow
 }
 
 div:last-child{
@@ -31,18 +31,40 @@ div:last-child{
 }
 
 .animate{
-  animation-name: slide;
-  animation-duration: 3s;
+  animation-name: slide, slidein, slideout;
+  animation-duration: 3s,2s;
   animation-delay: 0.25s;
-  animation-iteration-count: 5;
+  animation-iteration-count: 2,1;
   animation-timing-function: ease;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+  /* animation: 2s ease-in-out slide; */
 }
 
 @keyframes slide {
   0% {transform: translateX(0);}
   33% {transform: translateX(600px) rotate(180deg);}
   66% {transform: translateX(-600px) rotate(-180deg);}
-  100%{transform: translateY(-200px);}
+  100%{transform: translateX(0);
+       background-color: red;
+  }
+}
+
+p {
+  animation-duration: 2s;
+  animation-name: slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    translate:  0 -150vw;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
 }
 
 

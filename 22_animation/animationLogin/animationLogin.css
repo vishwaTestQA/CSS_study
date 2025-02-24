@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background-image: radial-gradient(whitesmoke, #5d5d5d) ;
+  display: grid;
+  place-content: center;
+}
+
+form {
+  padding: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 15px solid #333;
+  background-color: #5d5d5d;
+  box-shadow: 10px 10px 10px #333;
+  color: whitesmoke;
+  gap: 10px;
+}
+
+input{
+  width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+button{
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+
+
+
