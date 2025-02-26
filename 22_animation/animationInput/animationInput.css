@@ -1,0 +1,64 @@
+body{
+  display: grid;
+  place-content:center;
+  min-height: 100vh;
+}
+
+div{
+  width:300px;
+  height:30px;
+  border: 2px solid blue;
+  position: relative;
+  padding: 0;
+  display: flex;
+  background-color: transparent;
+}
+
+input{
+  flex:1;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 2px 5px;
+}
+
+
+.plac::before{
+   content:"username";
+   position: absolute;
+   width:25%;
+   height: 20px;
+   padding:5px 5px;
+   cursor: pointer;
+   z-index: -1;
+}
+
+
+.plac:focus-within::before{
+  /* transform: translateY(-25px) rotate(720deg);  */
+  background-color: white;
+  padding: 2px 5px;
+  margin: 10px;
+  z-index: -1;
+  animation: rotation 1s linear forwards;
+}
+
+@keyframes rotation {
+  0%{
+    transform: translateY(0) rotate(0deg);
+    background-color: aquamarine;
+  }
+  25%{
+    transform: translateY(-10px) rotate(90deg);
+  }
+  50%{
+    transform: translateY(-15px) rotate(180deg);
+  }
+  75%{
+    transform: translateY(-20px) rotate(270deg);
+  }
+  100%{
+    transform: translateY(-25px) rotate(360deg);
+    background-color: white;
+  }
+}
+

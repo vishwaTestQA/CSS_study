@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" title="animationInput" href="animationInput.css" data-customTitle ="customTitle">
+</head>
+<body>
+  <div class="plac">
+   <input type="text" name="input" id="input"  > 
+  </div>
+  <script>
+    const sheetName = "animationInput.css";
+    const title = "animationInput";
+
+const sheet = [...document.styleSheets].find(sheet => 
+    sheet.href && sheet.href.includes(sheetName)
+);
+
+const sheetTitle = [...document.styleSheets].find(sheet => 
+    sheet.title === title
+);
+
+
+sheet.insertRule("body {background-color: purple;");
+// sheet.insertRule(".plac::before {top: -25px; background-color:white; z-index:1;}");
+// sheet.deleteRule(".plac.focus-within::before{animation: rotation 1s linear forwards}")
+console.log(sheet);
+console.log(sheetTitle);
+
+
+
+    const placeDiv = document.querySelector('.plac');
+    const inputEle = document.querySelector('input');
+
+    const isInputHasValue =  false;
+    let value;
+  
+    placeDiv.addEventListener("click", ()=>{
+      inputEle.focus();
+    })
+
+
+    let deletedRule="";
+    inputEle.addEventListener("blur",()=>{
+         value = inputEle.value;
+
+         const rule = [...sheet.cssRules].find(rule => rule.selectorText === '.plac::before');
+
+         const index = [...sheet.cssRules].findIndex(rule => rule.selectorText === ".plac:focus-within::before");
+
+         if(value){
+          //adding a rule 
+          // sheet.insertRule(".plac::before {top: -25px; background-color:white;}");
+          if(rule){
+            rule.style.top = "-25px";
+          } 
+            //deleting a rule     // Find the index of the rule
+         if (index !== -1) {
+           deletedRule = sheet.cssRules[index].cssText;
+           console.log('savedRule', deletedRule);
+          sheet.deleteRule(index); // Remove the rule
+          console.log("Deleted .plac:focus-within::before");
+        } else {
+          console.log("Rule not found");
+          }
+        }
+
+          if(!value){
+            console.log(sheet);
+            sheet.insertRule(deletedRule, sheet.cssRules.length);
+            rule.style.removeProperty('top');
+            console.log('after', sheet);
+          }
+
+
+
+      })
+  
+
+  </script>
+</body>
+</html>
