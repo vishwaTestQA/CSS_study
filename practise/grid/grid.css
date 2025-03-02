@@ -1,0 +1,153 @@
+/* @media screen and (min-width: 576px) {
+  body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 30px auto 30px;
+    grid-template-areas: 
+        "hd hd hd hd hd hd" 
+        "sdl mn mn mn mn sdr" 
+        "ft ft ft ft ft ft";
+  }
+  
+  .header{
+    background-color: aqua;
+    grid-area: hd;
+  }
+  
+  .footer{
+    grid-area: ft;
+    background-color: aqua;
+  }
+  
+  .main{
+     grid-area: mn;
+     background: plum;
+  }
+  
+  .aside-left{
+    grid-area: sdl;
+  }
+  
+  .aside-right{
+    grid-area: sdr;
+  }
+}
+
+
+ */
+
+/* Resets */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Generalo styles */
+body{
+  background-color: antiquewhite;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
+/* utilities */
+
+
+/* Blocks */
+.header, .aside-left, .aside-right, .footer{
+  height: 40px;
+}
+
+.header, .footer{
+  background-color: tomato;
+}
+
+.aside-left, .aside-right{
+  background-color: cadetblue;
+}
+
+.main{
+  flex:1;
+
+  /* making main box flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Elements */
+.main__ul{
+  list-style-type: none;
+}
+
+.main__li{
+  border: 2px solid black;
+  margin-top: 10px;
+  width: 200px;  
+  height: 50px;
+  min-height:25px;
+  background-color: whitesmoke;
+}
+
+.main__dropArea{
+   width:50%;
+   min-height: 100px;
+   /* display:grid;
+   place-content: center;
+   height: 40px;  */
+   border: 2px solid black;
+   background-color: white; 
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   overflow: auto;
+   max-height: 150px;
+}
+
+li.dragged {
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 576px) {
+  body{
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 50px auto 50px;
+    grid-template-areas: 
+     "hd hd hd hd hd hd" 
+     "sdl mn mn mn mn sdr" 
+     "ft ft ft ft ft ft";
+  }
+
+  .header{
+    grid-area: hd;
+  }
+
+  .footer{
+    grid-area: ft;
+  }
+
+  .aside-left{
+    background-color: antiquewhite;
+    grid-area: sdl;
+    height: 100%;
+  }
+
+  .aside-right{
+    background-color: antiquewhite;
+    grid-area: sdr;
+    height: 100%;
+  }
+  
+  .main{
+    background-color: blueviolet;
+    grid-area: mn;
+  }
+}

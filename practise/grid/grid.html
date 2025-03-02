@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid</title>
+  <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <header class="header">Header</header>
+     <aside class="aside-left">sidebar left</aside>
+     <main class="main">
+         <ul class="main__ul">
+          <!-- <li class="main__li">list box1</li>
+          <li class="main__li">list box2</li>
+          <li class="main__li">list box3</li>
+          <li class="main__li">list box4</li>
+          <li class="main__li">list box5</li> -->
+         </ul>
+         <div class="main__dropArea"></div>
+     </main>
+     <aside class="aside-right">sidebar right</aside>
+     <footer class="footer">Footer</footer>
+</body>
+<script>
+  const ul = document.querySelector('ul');
+
+  for (let i = 1; i <= 5; i++) {
+    // Create a new paragraph element
+   let newLi = document.createElement("li");
+   newLi.classList.add('main__li');
+   newLi.textContent = `List ${i}`;
+   newLi.id = `list-item-${i}`;
+   newLi.style.backgroundColor = "white"; // Example styling
+   newLi.style.border="1px solid black";
+   newLi.style.marginTop="10px";
+   newLi.style.width="200px";
+   newLi.draggable =  true;
+
+    newLi.addEventListener("dragstart", (event) =>{
+      event.dataTransfer.setData('text/plain', newLi.id);
+    })
+
+    ul.appendChild(newLi);
+}
+
+let dropArea = document.querySelector('.main__dropArea');
+
+// dropArea.addEventListener('dragover', (event) =>{
+//   event.preventDefault();     //allowing droppings
+// })
+// 
+// dropArea.addEventListener('drop', (event) =>{
+//   event.preventDefault();
+//   let itemId = event.dataTransfer.getData('text/plain');
+//   let draggedItem =  document.getElementById(itemId);
+//   dropArea.appendChild(draggedItem);
+// });
+
+
+[dropArea, ul].forEach(area=>{
+  area.addEventListener('dragover', (event) =>{
+  event.preventDefault();     //allowing droppings
+})
+area.addEventListener('drop', (event) =>{
+  event.preventDefault();
+  let itemId = event.dataTransfer.getData('text/plain');
+  let draggedItem =  document.getElementById(itemId);
+  area.appendChild(draggedItem);
+});
+})
+</script>
+</html>

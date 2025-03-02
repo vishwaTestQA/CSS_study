@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>final_project</title>
+  <link rel="stylesheet" href="final_project.css">
+</head>
+<body>
+  <header class="header">
+     <h1>welcome to the shop</h1>
+     <nav class="header__nav">
+        <a href="menu.html">Menu</a>
+        <a href="hours.html">Hours</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="about.html">About</a>
+     </nav>
+  </header>
+  <main id="top">
+    <section class="'hero'">
+      <h1>Welcome</h1>
+      <figure>
+         <img src="./img/menu.jpg" alt="menu_img">
+         <figcaption class="offScreen">Menu image</figcaption>
+      </figure>
+    </section>
+    <article class="main__article">
+      <p class="main__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi magni doloribus deleniti fugit modi optio incidunt aliquid vel tempore, fuga voluptates explicabo assumenda quo consequuntur voluptas voluptate, numquam iusto minus?</p>
+    </article>
+    <article class="main__article">
+      <h1>New Items</h1>
+      <table class="menu__container">
+        <caption class="offScreen">list of menu items</caption>
+        <thead class="head">
+          <tr>
+            <th class="menu__header" scope="col">Item</th>
+            <th class="menu__header" scope="col">Quantity</th>
+            <th class="menu__header" scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="menu__item menu__cr" scope="row" rowspan="3">Crunchy</th>
+            <td class="menu__item">1</td>
+            <td class="menu__item" >$1.50</td>
+          </tr>
+          <tr>
+            <td class="menu__item">2</td>
+            <td class="menu__item">$2.50</td>
+          </tr>
+          <tr>
+            <td class="menu__item">3</td>
+            <td class="menu__item">$3.50</td>
+          </tr>
+          <tr>
+            <th class="menu__item menu__sf" scope="row" rowspan="3">softy</th>
+            <td class="menu__item">1</td>
+            <td class="menu__item">$2</td>
+          </tr>
+          <tr>
+            <td class="menu__item">2</td>
+            <td class="menu__item">$3</td>
+          </tr>
+          <tr>
+            <td class="menu__item">3</td>
+            <td class="menu__item">$4</td>
+          </tr>
+          <tfoot class="menu__footer">
+            <td colspan="3">Limited offer</td>
+          </tfoot>
+        </tbody>
+      </table>
+    </article>
+    <a href="#top">Back to Top</a>
+  </main>
+  <footer class="footer">
+    <p>
+      <span class="nowrap">copyright &copy;</span> 
+      <span class="nowrap">This is the footer</span>
+    </p>
+  </footer>
+</body>
+</html>
