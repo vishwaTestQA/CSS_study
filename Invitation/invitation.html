@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="invitation.css">
 </head>
 
@@ -13,25 +14,31 @@
     <div class="page one">
       <div class="card">
         <div class="main-round">
+          <div class="welcome-container">
+            <!-- <p class="wel">
+             You are cordially invited</p>
+          <p class="wel">for the</p> 
+          <p class="wel">Engagement of</p> -->
+          <p class="welcome-text w-text1">Save the Date</p>
+          <div class="date-round">09 MAY 2025</div>
+          <p class="welcome-text w-text2">Vishwanathan & Akchaya</p>
+          </div>
         </div>
-        <div class="name">
+        <!-- <div class="name">
           <div class="leftBox"><span class="letter left">V</span></div>
           <div class="rightBox"><span class="letter right">A</span></div>
-        </div>
+        </div> -->
         <!-- <span>You</span> <span>are</span> <span>cordially</span> <span>invited</span></p> -->
-        <div class="welcome-container">
-          <!-- <p class="wel">
-           You are cordially invited</p>
-        <p class="wel">for the</p> 
-        <p class="wel">Engagement of</p> -->
-          <p class="welcome-text w-text1">Save the Date</p>
-          <p class="welcome-text w-text2">Vishwanathan & Akchaya</p>
-        </div>
+      
       </div>
     </div>
 
     <div class="page two">
       <div class="card">
+        <div class="top">
+          <p class="top-text"></p>
+          <p class="top-event"></p>
+        </div>
         <!-- <div class="middle"> -->
           <div class="heart">
             <div class="heart-text">
@@ -46,6 +53,27 @@
         <div class="heart-side topRight"></div>
         <div class="heart-side bottomLeft"></div>
         <div class="heart-side bottomRight"></div>
+
+        <div class="bottom-left">
+          <p class="bottom-left-text text date">Date...</p>
+          <p class="bottom-left-text text date-text">09 May 2025</p>
+          <!-- <p class="bottom-left-event event"></p> -->
+        </div>
+
+        <div class="bottom-right">
+          <p class="bottom-right-text text">Time...</p>
+          <p class="bottom-right-text text">5 pm</p>
+          <!-- <p class="bottom-right-event event"></p> -->
+        </div>
+
+        <div class="bottom-middle">
+          <p class="bottom-middle-text text-hl"></p>
+          <!-- <p class="bottom-middle-event event">
+            <span class="bottom-middle-hall"></span>
+          </p> -->
+          <span class="bottom-middle-hall text-hl"></span>
+          <span class="bottom-middle-event event text-hl"></span>
+        </div>
 
       </div>
     </div>
@@ -90,6 +118,90 @@
     // window.onload = function () {
     //   setTimeout(typeLetters, 1000);
     // };
+
+
+    function typeLetters() {
+      const sentence = "We cordially invite you to attend the"
+      const sentence2 = "ENGAGEMENT CEREMONY OF"
+      const ele1 = document.querySelector('.top-text');
+      const ele2 = document.querySelector('.top-event');
+      const arr1 = sentence.split('')
+      const arr2 = sentence2.split('')
+
+      // while(i < arr.length){
+      //  console.log(arr[i])
+      //  setTimeout(ele.textContent += arr[i], 300)
+      //  i++;
+      // } 
+      ele1.textContent = '';
+      ele2.textContent = '';
+      
+
+     setTimeout(()=> {
+
+      arr1.forEach((char, i) => {
+        setTimeout(() => {
+          ele1.textContent += char
+        }, i * 30)
+      })
+
+      setTimeout(() => arr2.forEach((char, i) => {
+        setTimeout(() => {
+          ele2.textContent += char
+        }, i * 60)
+      }), arr1.length * 30)
+
+    },4000)
+
+    //bottom
+
+    const venue = "Venue..."
+    const mahal = "Blue Heaven Hall,";
+    const venueDetails = "V.S. Chellam Saraswathy Maaligai 2nd floor 136 G, kamarajar salai madurai-09"
+      const ele3 = document.querySelector('.bottom-middle-text');
+      const ele4 = document.querySelector('.bottom-middle-event');
+      const ele5 = document.querySelector('.bottom-middle-hall');
+      const arr3 = venue.split('')
+      const arr4 = venueDetails.split('')
+      const arr5 = mahal.split('')
+      ele3.textContent = '';
+      ele4.textContent = '';
+      ele5.textContent = '';
+
+setTimeout(()=> {
+
+arr3.forEach((char,i)=>{
+  setTimeout(()=>{
+    ele3.textContent += char
+  }, i*30)
+})
+
+setTimeout(() => {
+  arr5.forEach((char, i) => {
+  setTimeout(() => {
+    ele5.textContent += char
+  }, i * 30)
+})
+}, arr3.length * 30)
+
+
+setTimeout(() => arr4.forEach((char, i) => {
+  setTimeout(() => {
+    ele4.textContent += char
+  }, i * 60)
+}), (arr3.length+arr5.length) * 30)
+
+},6500)
+
+}
+
+    function waitForMs(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms))
+    }
+
+    window.onload = function () {
+      setTimeout(typeLetters, 1000);
+    };
   </script>
 </body>
 
